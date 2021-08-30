@@ -1,0 +1,78 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}
+	Product Detail
+{% endblock %}
+
+{% block body %}
+
+
+
+		<!-- main content -->
+<div class="main">
+
+    <div class="col-12" style="margin-top: 15px;">
+	<!--  TABLE -->
+	<div class="box">
+		<div class="box-header">
+			Product Detail
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="about-info">
+					<div class="media mt-3">
+                        <img width="200px" src="{{ asset('images/products/' ~ product.getImage())}}"  class="mr-3">
+						<div class="media-body">
+							<ul>
+                                <li>
+									<span class="title-span">
+										ID:
+									</span>
+									<span class="info-span">{{product.id}}</span>
+								</li>
+								<li>
+									<span class="title-span">Name:
+									</span>
+									<span class="info-span">{{product.Name}}</span>
+								</li>
+                                	<li>
+									<span class="title-span">Price: 
+									</span>
+									<span class="info-span">{{product.Price}}</span>
+								</li>
+
+								
+								<li>
+									<span class="title-span">Category: 
+									</span>
+									<span class="info-span">{{ product.category }}</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div>
+						<h3>
+							About
+						</h3>
+					</div>
+					<div class="row mt-3">
+						<div class="col-md-12">
+							<p>Open after rule place He earth earth good called days unto which wherein day doesn't said day image signs fish days forth for evening whose his make his bearing years gathering good brought without.
+								                                    Years living creepeth. Form them yielding behold greater divided void was fowl earth in. Spirit Bring grass they're you have shall years so morning. Grass gathering won't heaven set greater darkness forth abundantly he.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+		<!-- END MAIN CONTENT -->
+
+		<div class="overlay"></div>
+
+		<!-- END main content -->
+		<!-- script -->
+
+
+</html>{% endblock %}

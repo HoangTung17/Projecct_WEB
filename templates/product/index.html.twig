@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Product{% endblock %}
+
+{% block body %}
+<!-- main content -->
+		<div class="main">
+			<div
+				class="col-12" style="margin-top: 15px;">
+				<!--  TABLE -->
+				<div class="box">
+					<div class="box-header">
+					    Product List
+					</div>
+					<div class="box-body overflow-scroll">
+						<table>
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Product Name</th>
+									<th>Quantity</th>
+									<th>Category</th>
+									<th>Product Description</th>
+                                    <th>Image</th>
+                                    <th>Price</th>
+									<th>Date</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for product in products %}
+                                <tr>
+									<td>{{product.id}}</td>
+									<td>
+										<span class="slot name-shipped">
+											{{product.Name}}
+										</span>
+									</td>
+									<td>{{product.Quantity}}</td>
+									<td>{{product.Category}}</td>
+									<td>
+										<span class="slot name-shipped">
+											{{product.productDesc}}
+										</span>
+									</td>
+									<td>
+										<span class="slot name-shipped">
+											<img width="200px" src="{{ asset('images/products/' ~ product.getImage())}}">
+										</span>
+									</td>
+                                    <td>
+										<div class="teach-status teach-paid">
+											<div class="dot"></div>
+											<span>{{product.Price}}</span>
+										</div>
+									</td>  
+									<td>
+										<span class="slot name-shipped">
+											{{product.date|date('Y-m-d ')}}
+										</span>
+									</td>
+									<td class="text-right">
+										<div class="actions">
+											<a href="{{path('product_detail', {'id': product.id})}}">
+												<i class='las la-eye'></i>
+											</a>
+											<a href="{{path('product_update', {'id': product.id})}}">
+												<i class='bx bxs-edit'></i>
+											</a>
+											<a href="{{path('product_delete', {'id': product.id})}}" onclick="Confirm('Are yeu Sure ?')">
+												<i class='bx bxs-trash'></i>
+											</a>
+										</div>
+									</td>
+								</tr>
+                            {% endfor %}
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- END  TABLE -->
+			</div>
+		</div>
+		<!-- END MAIN CONTENT -->
+{% endblock %}

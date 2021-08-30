@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Category ADD
+{% endblock %}
+
+{% block body %}
+	
+
+		<!-- main content -->
+		<div class="main">
+			<div class="main-header">
+				<div class="mobile-toggle" id="mobile-toggle">
+					<i class="bx bx-menu-alt-right"></i>
+				</div>
+				<div class="main-title">
+					Add Category
+				</div>
+			</div>
+
+			<div
+				class="col-12" style="margin-top: 15px;">
+				<!--  TABLE -->
+				<div class="box">
+					<div class="box-header">
+						Add
+					</div>
+					<div class="box-body overflow-scroll">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="card-body">
+									{{form_start (form)}}
+											
+                                            <div class="col-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                    <label>Category Name</label>
+                                                    {{ form_widget (form.catName, {'attr': {'class' : 'form-control'}}) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Date</label>
+                                                    {{ form_widget (form.date, {'attr': {'class' : 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                                <div class="col-12">
+                                                    <button type="submit"  class="btn btn-primary" style="padding: 10px;">Submit</button>
+                                                </div>
+                                            </div>
+									{{form_end (form)}}
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- END  TABLE -->
+			</div>
+
+		</div>
+
+
+	
+</html>{% endblock %}
